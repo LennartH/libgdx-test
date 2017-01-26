@@ -9,7 +9,6 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
-import com.badlogic.gdx.scenes.scene2d.ui.ScrollPane;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextArea;
@@ -41,11 +40,6 @@ public class TextAreaHieroFontTest extends ApplicationAdapter {
 //        textArea.getStyle().font = fontGenerator.generateFont(fontParameter);
 //        fontGenerator.dispose();
 
-        final ScrollPane scrollPane = new ScrollPane(textArea, skin);
-        scrollPane.setFadeScrollBars(false);
-        scrollPane.setFlickScroll(false);
-        scrollPane.setScrollingDisabled(true, false);
-
         Button addLineButton = new TextButton("Add new line", skin);
         addLineButton.addListener(new ChangeListener() {
             @Override
@@ -56,7 +50,7 @@ public class TextAreaHieroFontTest extends ApplicationAdapter {
         container.add(addLineButton).colspan(2);
         
         container.row().height(350);
-        container.add(scrollPane);
+        container.add(textArea);
         container.debugAll();
     }
 
