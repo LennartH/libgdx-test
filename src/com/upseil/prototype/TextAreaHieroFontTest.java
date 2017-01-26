@@ -33,6 +33,8 @@ public class TextAreaHieroFontTest extends ApplicationAdapter {
         final TextArea textArea = new TextArea("Initial line.", skin);
         textArea.setDisabled(true);
         textArea.getStyle().font = new BitmapFont(Gdx.files.internal("font/lucida-console-15.fnt"));
+        // Fonts generated with BMFont also work
+//        textArea.getStyle().font = new BitmapFont(Gdx.files.internal("font/BMF-15/lucida-console-15.fnt"));
         // This works
 //        FreeTypeFontGenerator fontGenerator = new FreeTypeFontGenerator(Gdx.files.internal("font/lucida-console.ttf"));
 //        FreeTypeFontParameter fontParameter = new FreeTypeFontParameter();
