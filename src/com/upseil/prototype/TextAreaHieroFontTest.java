@@ -17,7 +17,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 
-public class AutoScrollingTextAreaFontTest extends ApplicationAdapter {
+public class TextAreaHieroFontTest extends ApplicationAdapter {
     Stage stage;
     int lineCounter;
 
@@ -31,21 +31,7 @@ public class AutoScrollingTextAreaFontTest extends ApplicationAdapter {
         container.setFillParent(true);
         container.pad(10).defaults().expandX().fillX().space(4);
 
-        final OpenScrollPane scrollPane = new OpenScrollPane(null, skin);
-        scrollPane.setFadeScrollBars(false);
-        scrollPane.setFlickScroll(false);
-        scrollPane.setScrollingDisabled(true, false);
-
-        final TextArea textArea = new TextArea("Initial line.", skin) {
-            public float getPrefHeight () {
-                float prefHeight = getLines() * getStyle().font.getLineHeight();
-                TextFieldStyle style = getStyle();
-                if (style.background != null) {
-                    prefHeight = Math.max(prefHeight + style.background.getBottomHeight() + style.background.getTopHeight(), style.background.getMinHeight());
-                }
-                return prefHeight;
-            }
-        };
+        final TextArea textArea = new TextArea("Initial line.", skin);
         textArea.setDisabled(true);
         textArea.getStyle().font = new BitmapFont(Gdx.files.internal("font/lucida-console-15.fnt"));
         // This works
@@ -54,16 +40,17 @@ public class AutoScrollingTextAreaFontTest extends ApplicationAdapter {
 //        fontParameter.size = 15;
 //        textArea.getStyle().font = fontGenerator.generateFont(fontParameter);
 //        fontGenerator.dispose();
-        
-        scrollPane.setWidget(textArea);
+
+        final ScrollPane scrollPane = new ScrollPane(textArea, skin);
+        scrollPane.setFadeScrollBars(false);
+        scrollPane.setFlickScroll(false);
+        scrollPane.setScrollingDisabled(true, false);
 
         Button addLineButton = new TextButton("Add new line", skin);
         addLineButton.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
                 textArea.appendText("\nLine " + lineCounter++);
-                scrollPane.invalidate();
-                scrollPane.scheduleScrollToBottom(); // See OpenScrollPane below
             }
         });
         container.add(addLineButton).colspan(2);
@@ -88,28 +75,6 @@ public class AutoScrollingTextAreaFontTest extends ApplicationAdapter {
         LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
         config.width = 1024;
         config.height = 768;
-        new LwjglApplication(new AutoScrollingTextAreaFontTest(), config);
-    }
-    
-    public class OpenScrollPane extends ScrollPane {
-        
-        private boolean scrollToBottom;
-
-        public OpenScrollPane(Actor widget, Skin skin) {
-            super(widget, skin);
-        }
-        
-        public void scheduleScrollToBottom() {
-            scrollToBottom = true;
-        }
-
-        @Override
-        public void layout() {
-            super.layout();
-            if (scrollToBottom) {
-                setScrollY(getMaxY());
-            }
-        }
-        
+        new LwjglApplication(new TextAreaHieroFontTest(), config);
     }
 }
