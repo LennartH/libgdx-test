@@ -1,0 +1,35 @@
+apply plugin: 'java'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+    maven { url "https://oss.sonatype.org/content/repositories/releases/" }
+}
+
+ext {
+	gradleTarget = '3.2.1'
+	javaTarget = '1.8'
+    gdxTarget = '1.9.6-SNAPSHOT'//'1.9.5'
+    artemisTarget = '2.1.0'
+}
+
+dependencies {
+    compile "com.badlogicgames.gdx:gdx:$gdxTarget"
+    compile "com.badlogicgames.gdx:gdx-backend-lwjgl:$gdxTarget"
+    compile "com.badlogicgames.gdx:gdx-platform:$gdxTarget:natives-desktop"
+}
+
+group = 'com.upseil'
+version = '0.1.0'
+
+sourceCompatibility = "$javaTarget"
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+sourceSets.main.java.srcDirs = [ "src/" ]
+
+task wrapper (type: Wrapper) {
+	group = 'help'
+	description = "Configures the wrapper for the target version $gradleTarget."
+	
+	gradleVersion = "$gradleTarget"
+}
