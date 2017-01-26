@@ -38,7 +38,7 @@ public class AutoScrollingTextAreaFontTest extends ApplicationAdapter {
 
         final TextArea textArea = new TextArea("Initial line.", skin) {
             public float getPrefHeight () {
-                float prefHeight = (getLines() + 1) * getStyle().font.getLineHeight();
+                float prefHeight = getLines() * getStyle().font.getLineHeight();
                 TextFieldStyle style = getStyle();
                 if (style.background != null) {
                     prefHeight = Math.max(prefHeight + style.background.getBottomHeight() + style.background.getTopHeight(), style.background.getMinHeight());
@@ -48,6 +48,12 @@ public class AutoScrollingTextAreaFontTest extends ApplicationAdapter {
         };
         textArea.setDisabled(true);
         textArea.getStyle().font = new BitmapFont(Gdx.files.internal("font/lucida-console-15.fnt"));
+        // This works
+//        FreeTypeFontGenerator fontGenerator = new FreeTypeFontGenerator(Gdx.files.internal("font/lucida-console.ttf"));
+//        FreeTypeFontParameter fontParameter = new FreeTypeFontParameter();
+//        fontParameter.size = 15;
+//        textArea.getStyle().font = fontGenerator.generateFont(fontParameter);
+//        fontGenerator.dispose();
         
         scrollPane.setWidget(textArea);
 

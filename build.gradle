@@ -16,8 +16,10 @@ ext {
 
 dependencies {
     compile "com.badlogicgames.gdx:gdx:$gdxTarget"
+    compile "com.badlogicgames.gdx:gdx-freetype:$gdxTarget"
     compile "com.badlogicgames.gdx:gdx-backend-lwjgl:$gdxTarget"
     compile "com.badlogicgames.gdx:gdx-platform:$gdxTarget:natives-desktop"
+    compile "com.badlogicgames.gdx:gdx-tools:$gdxTarget"
 }
 
 group = 'com.upseil'
