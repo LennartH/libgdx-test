@@ -47,6 +47,7 @@ public class TextAreaHieroFontTest extends ApplicationAdapter {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
                 textArea.appendText("\nLine " + lineCounter++);
+//                textArea.setCursorPosition(0); // This prevents the error
             }
         });
         container.add(addLineButton).colspan(2);

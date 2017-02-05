@@ -61,6 +61,7 @@ public class AutoScrollingTextAreaPrototype extends ApplicationAdapter {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
                 textArea.appendText("\nLine " + lineCounter++);
+//                textArea.setCursorPosition(0); // Another work around
                 scrollPane.invalidate();
                 scrollPane.scheduleScrollToBottom(); // See OpenScrollPane below
             }
