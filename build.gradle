@@ -10,7 +10,7 @@ repositories {
 ext {
 	gradleTarget = '3.2.1'
 	javaTarget = '1.8'
-    gdxTarget = '1.9.6-SNAPSHOT'//'1.9.5'
+    gdxTarget = '1.9.6'
     artemisTarget = '2.1.0'
 }
 
@@ -20,6 +20,9 @@ dependencies {
     compile "com.badlogicgames.gdx:gdx-backend-lwjgl:$gdxTarget"
     compile "com.badlogicgames.gdx:gdx-platform:$gdxTarget:natives-desktop"
     compile "com.badlogicgames.gdx:gdx-tools:$gdxTarget"
+    compile "net.onedaybeard.artemis:artemis-odb:$artemisTarget"
+    
+    testCompile 'junit:junit:4.12'
 }
 
 group = 'com.upseil'

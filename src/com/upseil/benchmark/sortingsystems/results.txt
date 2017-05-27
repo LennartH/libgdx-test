@@ -1,0 +1,71 @@
+Running Configuration: 50 entities, 5 layers, 1000 iterations, 10 deletions per iteration, 10 addings per iteration
+Array Sorting Benchmark:
+  Initial processing duration: 2.438275
+  Average processing duration: 0.01829488
+Map Sorting Benchmark:
+  Initial processing duration: 0.307194
+  Average processing duration: 0.011219483
+
+Running Configuration: 50 entities, 10 layers, 1000 iterations, 10 deletions per iteration, 10 addings per iteration
+Array Sorting Benchmark:
+  Initial processing duration: 0.106313
+  Average processing duration: 0.010491854
+Map Sorting Benchmark:
+  Initial processing duration: 0.132515
+  Average processing duration: 0.007674707
+
+Running Configuration: 100 entities, 10 layers, 1000 iterations, 10 deletions per iteration, 10 addings per iteration
+Array Sorting Benchmark:
+  Initial processing duration: 0.057523
+  Average processing duration: 0.006729348
+Map Sorting Benchmark:
+  Initial processing duration: 0.043068
+  Average processing duration: 0.005396379
+
+Running Configuration: 100 entities, 10 layers, 1000 iterations, 25 deletions per iteration, 25 addings per iteration
+Array Sorting Benchmark:
+  Initial processing duration: 0.054512
+  Average processing duration: 0.010605732
+Map Sorting Benchmark:
+  Initial processing duration: 0.044573
+  Average processing duration: 0.010914436999999999
+
+Running Configuration: 100 entities, 15 layers, 1000 iterations, 25 deletions per iteration, 25 addings per iteration
+Array Sorting Benchmark:
+  Initial processing duration: 0.068667
+  Average processing duration: 0.012710593000000001
+Map Sorting Benchmark:
+  Initial processing duration: 0.042465
+  Average processing duration: 0.010669251
+
+Running Configuration: 1000 entities, 15 layers, 1000 iterations, 50 deletions per iteration, 50 addings per iteration
+Array Sorting Benchmark:
+  Initial processing duration: 0.388208
+  Average processing duration: 0.886138939
+Map Sorting Benchmark:
+  Initial processing duration: 0.50958
+  Average processing duration: 0.018446681
+
+Running Configuration: 1000 entities, 15 layers, 1000 iterations, 100 deletions per iteration, 100 addings per iteration
+Array Sorting Benchmark:
+  Initial processing duration: 0.136129
+  Average processing duration: 2.484981845
+Map Sorting Benchmark:
+  Initial processing duration: 0.16715
+  Average processing duration: 0.019522763
+
+Running Configuration: 10000 entities, 20 layers, 1000 iterations, 500 deletions per iteration, 500 addings per iteration
+Array Sorting Benchmark:
+  Initial processing duration: 1.202272
+  Average processing duration: 63.160854192
+Map Sorting Benchmark:
+  Initial processing duration: 1.33569
+  Average processing duration: 0.151083931
+
+Running Configuration: 100000 entities, 20 layers, 1000 iterations, 1000 deletions per iteration, 1000 addings per iteration
+Array Sorting Benchmark:
+  Initial processing duration: 12.7895
+  Average processing duration: 292.81549462
+Map Sorting Benchmark:
+  Initial processing duration: 8.791163
+  Average processing duration: 1.196953983
